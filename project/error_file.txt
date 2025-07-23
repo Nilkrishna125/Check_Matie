@@ -1,0 +1,74 @@
+Engine.cpp: In function ‘int evaluate_king_safety(const chess::Board&, chess::Color)’:
+Engine.cpp:235:23: error: no matching function for call to ‘chess::Board::CastlingRights::has(const chess::File::underlying&)’
+  235 |         if (rights.has(File::FILE_H) || rights.has(File::FILE_A)) {
+      |             ~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from Engine.cpp:2:
+chess-library/include/chess.hpp:1800:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color, chess::Board::CastlingRights::Side) const’
+ 1800 |         constexpr bool has(Color color, Side castle) const {
+      |                        ^~~
+chess-library/include/chess.hpp:1800:24: note:   candidate expects 2 arguments, 1 provided
+chess-library/include/chess.hpp:1804:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color) const’
+ 1804 |         constexpr bool has(Color color) const { return has(color, Side::KING_SIDE) || has(color, Side::QUEEN_SIDE); }
+      |                        ^~~
+chess-library/include/chess.hpp:1804:34: note:   no known conversion for argument 1 from ‘const chess::File::underlying’ to ‘chess::Color’
+ 1804 |         constexpr bool has(Color color) const { return has(color, Side::KING_SIDE) || has(color, Side::QUEEN_SIDE); }
+      |                            ~~~~~~^~~~~
+Engine.cpp:235:51: error: no matching function for call to ‘chess::Board::CastlingRights::has(const chess::File::underlying&)’
+  235 |         if (rights.has(File::FILE_H) || rights.has(File::FILE_A)) {
+      |                                         ~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from Engine.cpp:2:
+chess-library/include/chess.hpp:1800:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color, chess::Board::CastlingRights::Side) const’
+ 1800 |         constexpr bool has(Color color, Side castle) const {
+      |                        ^~~
+chess-library/include/chess.hpp:1800:24: note:   candidate expects 2 arguments, 1 provided
+chess-library/include/chess.hpp:1804:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color) const’
+ 1804 |         constexpr bool has(Color color) const { return has(color, Side::KING_SIDE) || has(color, Side::QUEEN_SIDE); }
+      |                        ^~~
+chess-library/include/chess.hpp:1804:34: note:   no known conversion for argument 1 from ‘const chess::File::underlying’ to ‘chess::Color’
+ 1804 |         constexpr bool has(Color color) const { return has(color, Side::KING_SIDE) || has(color, Side::QUEEN_SIDE); }
+      |                            ~~~~~~^~~~~
+Engine.cpp:239:23: error: no matching function for call to ‘chess::Board::CastlingRights::has(const chess::File::underlying&, const chess::Color::underlying&)’
+  239 |         if (rights.has(File::FILE_H, Color::BLACK) || rights.has(File::FILE_A, Color::BLACK)) {
+      |             ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Engine.cpp:2:
+chess-library/include/chess.hpp:1800:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color, chess::Board::CastlingRights::Side) const’
+ 1800 |         constexpr bool has(Color color, Side castle) const {
+      |                        ^~~
+chess-library/include/chess.hpp:1800:34: note:   no known conversion for argument 1 from ‘const chess::File::underlying’ to ‘chess::Color’
+ 1800 |         constexpr bool has(Color color, Side castle) const {
+      |                            ~~~~~~^~~~~
+chess-library/include/chess.hpp:1804:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color) const’
+ 1804 |         constexpr bool has(Color color) const { return has(color, Side::KING_SIDE) || has(color, Side::QUEEN_SIDE); }
+      |                        ^~~
+chess-library/include/chess.hpp:1804:24: note:   candidate expects 1 argument, 2 provided
+Engine.cpp:239:65: error: no matching function for call to ‘chess::Board::CastlingRights::has(const chess::File::underlying&, const chess::Color::underlying&)’
+  239 |         if (rights.has(File::FILE_H, Color::BLACK) || rights.has(File::FILE_A, Color::BLACK)) {
+      |                                                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Engine.cpp:2:
+chess-library/include/chess.hpp:1800:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color, chess::Board::CastlingRights::Side) const’
+ 1800 |         constexpr bool has(Color color, Side castle) const {
+      |                        ^~~
+chess-library/include/chess.hpp:1800:34: note:   no known conversion for argument 1 from ‘const chess::File::underlying’ to ‘chess::Color’
+ 1800 |         constexpr bool has(Color color, Side castle) const {
+      |                            ~~~~~~^~~~~
+chess-library/include/chess.hpp:1804:24: note: candidate: ‘constexpr bool chess::Board::CastlingRights::has(chess::Color) const’
+ 1804 |         constexpr bool has(Color color) const { return has(color, Side::KING_SIDE) || has(color, Side::QUEEN_SIDE); }
+      |                        ^~~
+chess-library/include/chess.hpp:1804:24: note:   candidate expects 1 argument, 2 provided
+Engine.cpp: In function ‘int evaluate_position(const chess::Board&)’:
+Engine.cpp:320:50: error: invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]
+  320 |             PieceType p = static_cast<PieceType>(piece_idx);
+      |                                                  ^~~~~~~~~
+      |                                                  |
+      |                                                  int
+In file included from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from Engine.cpp:1:
+/usr/include/c++/11/string_view:131:39: note:   initializing argument 1 of ‘constexpr std::basic_string_view<_CharT, _Traits>::basic_string_view(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>]’
+  131 |       basic_string_view(const _CharT* __str) noexcept
+      |                         ~~~~~~~~~~~~~~^~~~~
